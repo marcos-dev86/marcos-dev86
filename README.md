@@ -12,7 +12,7 @@ transformando ideias em aplicações que funcionam de ponta a ponta.
 <hr>
 
 ```
-$ cat stack.json
+tecnologias.json
 
 {
   "frontend": ["JavaScript", "React", "HTML5", "CSS3"],
