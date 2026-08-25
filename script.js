@@ -86,7 +86,7 @@ function setupStatusBar() {
     stack: "stack.json",
     projetos: "projetos/index.ts",
     github: "github.stats",
-    contato: "contato.sh",
+    contato: "contato.html",
   };
 
   const io = new IntersectionObserver(
