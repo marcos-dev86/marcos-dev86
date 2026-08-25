@@ -1,6 +1,6 @@
 <div align="center">
 
-# Marcos Rosa — full stack developer
+# Marcos Rosa • full stack developer
 
 transformando ideias em aplicações que funcionam de ponta a ponta.
 
