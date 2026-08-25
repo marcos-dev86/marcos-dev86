@@ -6,7 +6,7 @@ const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").match
 ========================================================= */
 const terminalLines = [
   { text: "$ whoami", pause: 300 },
-  { text: "marcos — full stack developer", pause: 500, muted: true },
+  { text: "Marcos • full stack developer", pause: 500, muted: true },
   { text: "", pause: 200 },
   { text: "$ cat missao.txt", pause: 300 },
   { text: "transformar ideias em aplicações", pause: 60, muted: true },
@@ -86,7 +86,7 @@ function setupStatusBar() {
     stack: "stack.json",
     projetos: "projetos/index.ts",
     github: "github.stats",
-    contato: "contato.sh",
+    contato: "contato.html",
   };
 
   const io = new IntersectionObserver(
@@ -138,11 +138,16 @@ async function loadProjects() {
   let repos = [];
   try {
     const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=6`
+      `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=10`
     );
     if (!res.ok) throw new Error("API indisponível");
     const data = await res.json();
-    repos = data.filter((r) => !r.fork).slice(0, 6);
+    repos = data
+      .filter((r) => !r.fork)
+      // remove o próprio repositório do portfólio (username/username),
+      // que não é um "projeto" e sempre aparece por ser atualizado com frequência
+      .filter((r) => r.name.toLowerCase() !== GITHUB_USER.toLowerCase())
+      .slice(0, 6);
   } catch (err) {
     repos = [];
   }
