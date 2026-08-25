@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Marcos · Full Stack Developer</title>
+<meta name="description" content="Marcos — Full Stack Developer. Projetos, stack e contato." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== TAB BAR (navegação) ===== -->
+<header class="tabbar" role="banner">
+  <div class="tabbar-inner">
+    <div class="tabbar-brand" aria-hidden="true">
+      <span class="brand-dot"></span>
+      marcos-dev86
+    </div>
+    <nav class="tabs" aria-label="Navegação principal">
+      <a href="#home" class="tab is-active" data-tab="home">home.tsx</a>
+      <a href="#sobre" class="tab" data-tab="sobre">sobre.md</a>
+      <a href="#stack" class="tab" data-tab="stack">stack.json</a>
+      <a href="#projetos" class="tab" data-tab="projetos">projetos/</a>
+      <a href="#github" class="tab" data-tab="github">github.stats</a>
+      <a href="#contato" class="tab" data-tab="contato">contato.sh</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="section hero">
+    <div class="hero-grid">
+      <div class="hero-text reveal">
+        <p class="eyebrow">// ola.txt</p>
+        <h1>Olá, eu sou <span class="accent-amber">Marcos</span><span class="wave">👋</span></h1>
+        <p class="hero-sub">Desenvolvedor <strong>Full Stack</strong> — transformo ideias em aplicações que funcionam de ponta a ponta, do banco de dados até a interface.</p>
+        <div class="hero-cta">
+          <a href="#projetos" class="btn btn-primary">Ver projetos</a>
+          <a href="https://github.com/marcos-dev86" class="btn btn-ghost" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-terminal reveal" aria-hidden="true">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="terminal-title">marcos@dev86: ~</span>
+        </div>
+        <div class="terminal-body" id="terminal-body">
+          <pre id="terminal-output"></pre>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint reveal" aria-hidden="true">
+      <span></span>
+      scroll
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section id="sobre" class="section">
+    <p class="eyebrow reveal">sobre.md</p>
+    <h2 class="reveal">Sobre mim</h2>
+    <div class="rule reveal"></div>
+
+    <div class="about-grid">
+      <p class="about-text reveal">
+        Curto pegar um problema real e transformar em algo que funciona — do modelo de dados até o último detalhe da interface.
+        Trabalho principalmente com <code>JavaScript</code> e <code>Python</code>, mas prefiro entender a stack inteira
+        antes de escrever a primeira linha: como os dados entram, onde vivem, e como chegam até quem vai usar.
+        <br><br>
+        Gosto de código que qualquer pessoa da equipe consegue ler seis meses depois — e de aprender fazendo,
+        quebrando as coisas até entender por que elas funcionam.
+      </p>
+
+      <div class="about-tags reveal" aria-label="Principais tecnologias">
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+        <span class="tag">Python</span>
+        <span class="tag">Java</span>
+        <span class="tag">SQL</span>
+        <span class="tag">PostgreSQL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STACK ===== -->
+  <section id="stack" class="section">
+    <p class="eyebrow reveal">stack.json</p>
+    <h2 class="reveal">Stack</h2>
+    <div class="rule reveal"></div>
+
+    <div class="json-block reveal">
+      <pre class="json-pre"><code><span class="punct">{</span>
+  <span class="key">"frontend"</span><span class="punct">:</span> [<span class="str">"JavaScript"</span>, <span class="str">"React"</span>, <span class="str">"HTML5"</span>, <span class="str">"CSS3"</span>]<span class="punct">,</span>
+  <span class="key">"backend"</span><span class="punct">:</span> [<span class="str">"Python"</span>, <span class="str">"Java"</span>, <span class="str">"Node.js"</span>]<span class="punct">,</span>
+  <span class="key">"dados"</span><span class="punct">:</span> [<span class="str">"SQL"</span>, <span class="str">"PostgreSQL"</span>]<span class="punct">,</span>
+  <span class="key">"ferramentas"</span><span class="punct">:</span> [<span class="str">"Git"</span>, <span class="str">"GitHub"</span>, <span class="str">"Docker"</span>]<span class="punct">,</span>
+  <span class="key">"sempre_aprendendo"</span><span class="punct">:</span> <span class="bool">true</span>
+<span class="punct">}</span></code></pre>
+    </div>
+  </section>
+
+  <!-- ===== PROJETOS ===== -->
+  <section id="projetos" class="section">
+    <p class="eyebrow reveal">projetos/</p>
+    <h2 class="reveal">Projetos</h2>
+    <div class="rule reveal"></div>
+
+    <p class="ls-line reveal">$ ls -la ./projetos <span class="text-muted">— carregando direto do GitHub</span></p>
+
+    <div class="project-grid reveal" id="project-grid">
+      <!-- Preenchido via script.js (API do GitHub). Fallback abaixo se a API falhar. -->
+      <template id="project-card-template">
+        <a class="project-card" target="_blank" rel="noopener">
+          <div class="project-card-head">
+            <span class="folder-icon">▸</span>
+            <span class="project-name"></span>
+          </div>
+          <p class="project-desc"></p>
+          <div class="project-meta">
+            <span class="project-lang"></span>
+            <span class="project-stars"></span>
+          </div>
+          <span class="project-link">Ver projeto →</span>
+        </a>
+      </template>
+    </div>
+  </section>
+
+  <!-- ===== GITHUB ===== -->
+  <section id="github" class="section">
+    <p class="eyebrow reveal">github.stats</p>
+    <h2 class="reveal">GitHub</h2>
+    <div class="rule reveal"></div>
+
+    <div class="gh-live-stats reveal" id="gh-live-stats" aria-live="polite">
+      <!-- Preenchido via script.js com dados públicos da API -->
+    </div>
+
+    <div class="gh-cards reveal">
+      <img
+        class="gh-card"
+        src="https://github-readme-stats.vercel.app/api?username=marcos-dev86&show_icons=true&hide_border=true&bg_color=0B0E14&title_color=E8A33D&icon_color=5FD4C4&text_color=E7E6E1&hide_rank=false"
+        alt="Estatísticas do GitHub de marcos-dev86"
+        loading="lazy"
+      />
+      <img
+        class="gh-card"
+        src="https://github-readme-stats.vercel.app/api/top-langs/?username=marcos-dev86&layout=compact&hide_border=true&bg_color=0B0E14&title_color=E8A33D&text_color=E7E6E1"
+        alt="Linguagens mais usadas por marcos-dev86"
+        loading="lazy"
+      />
+    </div>
+
+    <div class="gh-streak reveal">
+      <img
+        src="https://github-readme-streak-stats.herokuapp.com/?user=marcos-dev86&hide_border=true&background=0B0E14&stroke=232935&ring=E8A33D&fire=E8A33D&currStreakLabel=5FD4C4"
+        alt="Streak de contribuições de marcos-dev86"
+        loading="lazy"
+      />
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section id="contato" class="section">
+    <p class="eyebrow reveal">contato.sh</p>
+    <h2 class="reveal">Contato</h2>
+    <div class="rule reveal"></div>
+
+    <div class="shell-block reveal">
+      <pre class="shell-pre"><code><span class="text-muted">#!/bin/bash</span>
+<span class="key">export</span> GITHUB=<span class="str">"github.com/marcos-dev86"</span>
+<span class="key">export</span> EMAIL=<span class="str">"seuemail@exemplo.com"</span>
+
+<span class="text-muted"># abra o canal que preferir</span></code></pre>
+
+      <div class="contact-actions">
+        <a class="btn btn-primary" href="https://github.com/marcos-dev86" target="_blank" rel="noopener">
+          → ./abrir_github.sh
+        </a>
+        <a class="btn btn-ghost" href="mailto:seuemail@exemplo.com">
+          → ./enviar_email.sh
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>construído com HTML, CSS e JavaScript puro · sem frameworks aqui</p>
+</footer>
+
+<!-- ===== STATUS BAR (rodapé fixo, estilo editor) ===== -->
+<div class="statusbar" id="statusbar" aria-hidden="true">
+  <span class="status-branch">⎇ main</span>
+  <span class="status-file" id="status-file">home.tsx</span>
+  <span class="status-pos" id="status-pos">Ln 1, Col 1</span>
+  <span class="status-enc">UTF-8</span>
+  <span class="status-role">Full Stack Dev</span>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
