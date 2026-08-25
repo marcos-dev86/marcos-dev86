@@ -9,21 +9,21 @@ transformando ideias em aplicações que funcionam de ponta a ponta.
 </div>
 
 <br>
+<hr>
 
 ```
-$ cat stack.txt
-JavaScript · React · Python · Java · SQL · PostgreSQL
+$ cat stack.json
+
+{
+  "frontend": ["JavaScript", "React", "HTML5", "CSS3"],
+  "backend": ["Python", "Java", "Node.js"],
+  "dados": ["SQL", "PostgreSQL"],
+  "ferramentas": ["Git", "GitHub", "Docker"],
+  "sempre_aprendendo": true
+}
 ```
 
--  construindo e destrinchando projetos full stack, do banco à interface
--  sempre com alguma coisa nova pra quebrar e entender por dentro
--  contato e detalhes dos principais projetos → [portfólio completo](https://marcos-dev86.github.io/marcos-dev86/)
-
-<br>
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=marcos-dev86&show_icons=true&hide_border=true&bg_color=0B0E14&title_color=E8A33D&icon_color=5FD4C4&text_color=E7E6E1" alt="Estatísticas do GitHub" height="165" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=marcos-dev86&layout=compact&hide_border=true&bg_color=0B0E14&title_color=E8A33D&text_color=E7E6E1" alt="Linguagens mais usadas" height="165" />
-
-</div>
+-  Estudante ETEC Darcy Perreira de Moraes
+-  1ºM-TEC Desenvolvimento de Sistemas
+-  Construindo e destrinchando projetos full stack, do banco à interface
+-  Sempre com alguma coisa nova pra quebrar e entender por dentro
