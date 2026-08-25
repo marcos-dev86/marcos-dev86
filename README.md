@@ -1,6 +1,6 @@
 <div align="center">
 
-# marcos — full stack developer
+# Marcos Rosa — full stack developer
 
 transformando ideias em aplicações que funcionam de ponta a ponta.
 
@@ -15,9 +15,9 @@ $ cat stack.txt
 JavaScript · React · Python · Java · SQL · PostgreSQL
 ```
 
-- 🔭 construindo e destrinchando projetos full stack, do banco à interface
-- 🌱 sempre com alguma coisa nova pra quebrar e entender por dentro
-- 📫 contato e detalhes de todos os projetos → [portfólio completo](https://marcos-dev86.github.io/marcos-dev86/)
+-  construindo e destrinchando projetos full stack, do banco à interface
+-  sempre com alguma coisa nova pra quebrar e entender por dentro
+-  contato e detalhes dos principais projetos → [portfólio completo](https://marcos-dev86.github.io/marcos-dev86/)
 
 <br>
 
