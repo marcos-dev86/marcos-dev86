@@ -14,6 +14,12 @@
   --teal: #5fd4c4;
   --rose: #e38c9e;
 
+  /* Variantes usadas em texto/bordas — no escuro, iguais às cores base.
+     No claro, são versões mais profundas para manter leitura confortável. */
+  --amber-fg: var(--amber);
+  --teal-fg: var(--teal);
+  --rose-fg: var(--rose);
+
   --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
 
@@ -25,13 +31,18 @@
 
 /* Tema claro — ativado via [data-theme="light"] no <html> (padrão continua escuro) */
 :root[data-theme="light"] {
-  --bg: #f4f5f7;
+  --bg: #fafafa;
   --panel: #ffffff;
-  --panel-2: #eceef2;
-  --border: #dde1e7;
+  --panel-2: #f2f3f5;
+  --border: #e2e4e9;
 
-  --text: #14171c;
-  --text-muted: #5b6472;
+  --text: #1c1f26;
+  --text-muted: #6b7280;
+
+  /* Tons mais profundos e sóbrios para leitura confortável sobre fundo claro */
+  --amber-fg: #a35d13;
+  --teal-fg: #0f766e;
+  --rose-fg: #b8385a;
 
   color-scheme: light;
 }
@@ -117,10 +128,10 @@ code { font-family: var(--mono); }
   transition: color 0.15s ease, background 0.15s ease;
 }
 
-.tab:hover { color: var(--text); background: rgba(255,255,255,0.02); }
+.tab:hover { color: var(--text); background: var(--panel-2); }
 
 .tab.is-active {
-  color: var(--amber);
+  color: var(--amber-fg);
   background: var(--bg);
 }
 .tab.is-active::after {
@@ -130,10 +141,10 @@ code { font-family: var(--mono); }
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--amber);
+  background: var(--amber-fg);
 }
 
-.tab:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+.tab:focus-visible { outline: 2px solid var(--teal-fg); outline-offset: -2px; }
 
 /* =========================================================
    THEME TOGGLE
@@ -156,9 +167,9 @@ code { font-family: var(--mono); }
   color: var(--text-muted);
   transition: color 0.2s ease;
 }
-.theme-icon-moon { color: var(--teal); }
+.theme-icon-moon { color: var(--teal-fg); }
 :root[data-theme="light"] .theme-icon-moon { color: var(--text-muted); }
-:root[data-theme="light"] .theme-icon-sun { color: var(--amber); }
+:root[data-theme="light"] .theme-icon-sun { color: var(--amber-fg); }
 
 .theme-toggle-track {
   width: 36px;
@@ -187,9 +198,9 @@ code { font-family: var(--mono); }
   box-shadow: 0 0 8px rgba(232, 163, 61, 0.5);
 }
 
-.theme-toggle:hover .theme-toggle-track { border-color: var(--teal); }
+.theme-toggle:hover .theme-toggle-track { border-color: var(--teal-fg); }
 .theme-toggle:focus-visible {
-  outline: 2px solid var(--teal);
+  outline: 2px solid var(--teal-fg);
   outline-offset: 3px;
   border-radius: 999px;
 }
@@ -209,7 +220,7 @@ main { max-width: var(--max-width); margin: 0 auto; padding: 0 20px; }
 .eyebrow {
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--teal);
+  color: var(--teal-fg);
   margin: 0 0 12px;
   letter-spacing: 0.02em;
 }
@@ -229,7 +240,7 @@ h2 {
 }
 
 .text-muted { color: var(--text-muted); }
-.accent-amber { color: var(--amber); }
+.accent-amber { color: var(--amber-fg); }
 
 /* reveal-on-scroll */
 .reveal {
@@ -255,7 +266,7 @@ h2 {
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
 }
 .btn:hover { transform: translateY(-2px); }
-.btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.btn:focus-visible { outline: 2px solid var(--teal-fg); outline-offset: 2px; }
 
 .btn-primary {
   background: var(--amber);
@@ -267,7 +278,7 @@ h2 {
   border-color: var(--border);
   color: var(--text);
 }
-.btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+.btn-ghost:hover { border-color: var(--teal-fg); color: var(--teal-fg); }
 
 .btn-whatsapp {
   background: #25d366;
@@ -335,6 +346,9 @@ h2 {
   overflow: hidden;
   box-shadow: 0 30px 60px -30px rgba(0,0,0,0.6);
 }
+:root[data-theme="light"] .hero-terminal {
+  box-shadow: 0 20px 45px -28px rgba(15, 23, 42, 0.25);
+}
 
 .terminal-bar {
   background: var(--panel-2);
@@ -398,7 +412,7 @@ h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--teal);
+  background: var(--teal-fg);
   animation: scrollline 2s ease-in-out infinite;
 }
 @keyframes scrollline {
@@ -419,7 +433,7 @@ h2 {
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.9em;
-  color: var(--teal);
+  color: var(--teal-fg);
 }
 
 .about-tags { display: flex; flex-wrap: wrap; gap: 10px; align-content: flex-start; }
@@ -432,7 +446,7 @@ h2 {
   color: var(--text-muted);
   transition: border-color 0.15s ease, color 0.15s ease;
 }
-.tag:hover { border-color: var(--rose); color: var(--rose); }
+.tag:hover { border-color: var(--rose-fg); color: var(--rose-fg); }
 
 /* =========================================================
    STACK — skills widget (categorias + grid)
@@ -467,11 +481,11 @@ h2 {
   transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
 }
 .skills-category:hover { color: var(--text); border-color: var(--border); }
-.skills-category:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.skills-category:focus-visible { outline: 2px solid var(--teal-fg); outline-offset: 2px; }
 
 .skills-category-icon {
   display: flex;
-  color: var(--amber);
+  color: var(--amber-fg);
   flex: 0 0 auto;
 }
 .skills-category-icon svg { width: 16px; height: 16px; }
@@ -536,7 +550,7 @@ h2 {
   position: absolute;
   width: 14px;
   height: 14px;
-  border-color: var(--teal);
+  border-color: var(--teal-fg);
   border-style: solid;
   border-width: 0;
   opacity: 0;
@@ -560,7 +574,7 @@ h2 {
 .skill-card:hover,
 .skill-card:focus-visible {
   transform: translateY(-4px);
-  border-color: var(--teal);
+  border-color: var(--teal-fg);
   outline: none;
 }
 .skill-card:hover::before,
@@ -623,9 +637,9 @@ h2 {
 }
 .project-card:hover {
   transform: translateY(-4px);
-  border-color: var(--teal);
+  border-color: var(--teal-fg);
 }
-.project-card:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+.project-card:focus-visible { outline: 2px solid var(--teal-fg); outline-offset: 2px; }
 
 .project-card-head {
   display: flex;
@@ -636,7 +650,7 @@ h2 {
   font-size: 15px;
   margin-bottom: 10px;
 }
-.folder-icon { color: var(--amber); }
+.folder-icon { color: var(--amber-fg); }
 
 .project-desc {
   font-size: 14px;
@@ -653,12 +667,12 @@ h2 {
   color: var(--text-muted);
   margin-bottom: 14px;
 }
-.project-lang::before { content: "● "; color: var(--rose); }
+.project-lang::before { content: "● "; color: var(--rose-fg); }
 
 .project-link {
   font-family: var(--mono);
   font-size: 13px;
-  color: var(--teal);
+  color: var(--teal-fg);
 }
 
 /* =========================================================
@@ -679,7 +693,7 @@ h2 {
   font-size: 13px;
   color: var(--text-muted);
 }
-.gh-stat-chip strong { color: var(--amber); font-size: 16px; display: block; }
+.gh-stat-chip strong { color: var(--amber-fg); font-size: 16px; display: block; }
 
 .gh-cards {
   display: grid;
@@ -709,8 +723,8 @@ h2 {
   line-height: 1.9;
   overflow-x: auto;
 }
-.shell-pre .key { color: var(--teal); }
-.shell-pre .str { color: var(--amber); }
+.shell-pre .key { color: var(--teal-fg); }
+.shell-pre .str { color: var(--amber-fg); }
 
 .contact-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
