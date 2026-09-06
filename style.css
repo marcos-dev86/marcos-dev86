@@ -448,6 +448,29 @@ h2 {
 }
 .tag:hover { border-color: var(--rose-fg); color: var(--rose-fg); }
 
+.about-facts {
+  grid-column: 1 / -1;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 32px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.about-facts li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.about-fact-icon { flex: 0 0 auto; font-size: 15px; }
+
 /* =========================================================
    STACK — skills widget (categorias + grid)
 ========================================================= */
@@ -641,6 +664,11 @@ h2 {
 }
 .project-card:focus-visible { outline: 2px solid var(--teal-fg); outline-offset: 2px; }
 
+.project-card.is-featured {
+  border-color: var(--amber-fg);
+}
+.project-card.is-featured:hover { border-color: var(--amber-fg); }
+
 .project-card-head {
   display: flex;
   align-items: center;
@@ -651,6 +679,20 @@ h2 {
   margin-bottom: 10px;
 }
 .folder-icon { color: var(--amber-fg); }
+.project-name { flex: 1; }
+
+.project-badge {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 10.5px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #0b0e14;
+  background: var(--amber);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
 
 .project-desc {
   font-size: 14px;
@@ -765,6 +807,7 @@ h2 {
   .hero-grid { grid-template-columns: 1fr; gap: 40px; }
   .hero { padding-top: 40px; min-height: auto; padding-bottom: 60px; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
+  .about-facts { grid-template-columns: 1fr; padding: 18px 20px; }
   .gh-cards { grid-template-columns: 1fr; }
   .section { padding: 64px 0 36px; }
   .statusbar .status-role { display: none; }
