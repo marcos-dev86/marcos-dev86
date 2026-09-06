@@ -186,18 +186,48 @@ const SKILL_CATEGORIES = [
     ],
   },
   {
-    id: "ferramentas",
-    label: "Ferramentas",
+    id: "versionamento",
+    label: "Versionamento",
     icon: '<path d="M3 6.5C3 5.67 3.67 5 4.5 5H9l2 2h8.5c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>',
     items: [
       { name: "Git", abbr: "Git", color: "#f05032" },
       { name: "GitHub", abbr: "GH", color: "#a9b1bd" },
+    ],
+  },
+  {
+    id: "desenvolvimento",
+    label: "Desenvolvimento",
+    icon: '<path d="M3 6.5C3 5.67 3.67 5 4.5 5H9l2 2h8.5c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>',
+    items: [
+      { name: "VS Code", abbr: "VS", color: "#007acc" },
+      { name: "Expo Go", abbr: "Ex", color: "#4630eb" },
+    ],
+  },
+  {
+    id: "devops",
+    label: "DevOps",
+    icon: '<path d="M3 6.5C3 5.67 3.67 5 4.5 5H9l2 2h8.5c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>',
+    items: [
       { name: "Docker", abbr: "Dk", color: "#2496ed" },
       { name: "Linux", abbr: "Lx", color: "#f0c14e" },
-      { name: "VS Code", abbr: "VS", color: "#007acc" },
+    ],
+  },
+  {
+    id: "cloud",
+    label: "Cloud",
+    icon: '<path d="M3 6.5C3 5.67 3.67 5 4.5 5H9l2 2h8.5c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>',
+    items: [
       { name: "Vercel", abbr: "▲", color: "#9ca3af" },
-      { name: "Canva", abbr: "Cv", color: "#00c4cc" },
       { name: "Computação em Nuvem", abbr: "☁", color: "#38bdf8" },
+    ],
+  },
+  {
+    id: "design",
+    label: "Design",
+    icon: '<path d="M3 6.5C3 5.67 3.67 5 4.5 5H9l2 2h8.5c.83 0 1.5.67 1.5 1.5v9c0 .83-.67 1.5-1.5 1.5h-15A1.5 1.5 0 0 1 3 17.5v-11Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>',
+    items: [
+      { name: "Canva", abbr: "Cv", color: "#00c4cc" },
+      { name: "Figma", abbr: "Fg", color: "#a259ff" },
     ],
   },
 ];
@@ -265,6 +295,8 @@ function setupSkillsWidget() {
 /* =========================================================
    5. PROJETOS — busca repositórios reais via API do GitHub
 ========================================================= */
+const FEATURED_REPO = "90mais3";
+
 const FALLBACK_PROJECTS = [
   {
     name: "90mais3",
@@ -306,6 +338,15 @@ async function loadProjects() {
 
   if (repos.length === 0) repos = FALLBACK_PROJECTS;
 
+  // Projeto destaque (citado no README) sempre aparece primeiro
+  const featuredIndex = repos.findIndex(
+    (r) => r.name.toLowerCase() === FEATURED_REPO.toLowerCase()
+  );
+  if (featuredIndex > 0) {
+    const [featured] = repos.splice(featuredIndex, 1);
+    repos.unshift(featured);
+  }
+
   repos.forEach((repo) => {
     const node = template.content.cloneNode(true);
     const card = node.querySelector(".project-card");
@@ -314,6 +355,14 @@ async function loadProjects() {
     node.querySelector(".project-name").textContent = repo.name;
     node.querySelector(".project-desc").textContent =
       repo.description || "Sem descrição por enquanto — dá uma olhada no repositório.";
+
+    const isFeatured = repo.name.toLowerCase() === FEATURED_REPO.toLowerCase();
+    const badgeEl = node.querySelector(".project-badge");
+    if (isFeatured) {
+      card.classList.add("is-featured");
+    } else if (badgeEl) {
+      badgeEl.remove();
+    }
 
     const langEl = node.querySelector(".project-lang");
     if (repo.language) {
