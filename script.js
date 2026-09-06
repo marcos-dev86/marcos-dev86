@@ -50,7 +50,7 @@ const terminalLines = [
   { text: "transformar ideias em aplicações", pause: 60, muted: true },
   { text: "rápidas, funcionais e bem feitas.", pause: 500, muted: true },
   { text: "", pause: 200 },
-  { text: "$ ./abrir_projetos.sh", pause: 300 },
+  { text: "$ ./abrir_projetos.js", pause: 300 },
 ];
 
 async function typeTerminal() {
@@ -160,6 +160,7 @@ const SKILL_CATEGORIES = [
       { name: "HTML5", abbr: "5", color: "#e34f26" },
       { name: "CSS3", abbr: "3", color: "#1572b6" },
       { name: "JavaScript", abbr: "JS", color: "#f0db4f" },
+      { name: "TypeScript", abbr: "TS", color: "#3178c6" },
       { name: "React", abbr: "⚛", color: "#5fd4c4" },
     ],
   },
@@ -171,6 +172,7 @@ const SKILL_CATEGORIES = [
       { name: "Python", abbr: "Py", color: "#4b8bbe" },
       { name: "Java", abbr: "Jv", color: "#f89820" },
       { name: "Node.js", abbr: "Nd", color: "#3c873a" },
+      { name: "C++", abbr: "C++", color: "#00599c" },
     ],
   },
   {
@@ -180,6 +182,7 @@ const SKILL_CATEGORIES = [
     items: [
       { name: "SQL", abbr: "SQL", color: "#e38c9e" },
       { name: "PostgreSQL", abbr: "PG", color: "#336791" },
+      { name: "MySQL", abbr: "My", color: "#f29111" },
     ],
   },
   {
@@ -190,6 +193,11 @@ const SKILL_CATEGORIES = [
       { name: "Git", abbr: "Git", color: "#f05032" },
       { name: "GitHub", abbr: "GH", color: "#a9b1bd" },
       { name: "Docker", abbr: "Dk", color: "#2496ed" },
+      { name: "Linux", abbr: "Lx", color: "#f0c14e" },
+      { name: "VS Code", abbr: "VS", color: "#007acc" },
+      { name: "Vercel", abbr: "▲", color: "#9ca3af" },
+      { name: "Canva", abbr: "Cv", color: "#00c4cc" },
+      { name: "Computação em Nuvem", abbr: "☁", color: "#38bdf8" },
     ],
   },
 ];
