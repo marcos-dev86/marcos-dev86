@@ -5,6 +5,7 @@
 transformando ideias em aplicações que funcionam de ponta a ponta.
 
 **[→ ver portfólio completo](https://marcos-dev86.github.io/marcos-dev86/)**
+**[→ ver projeto destaque](https://github.com/marcos-dev86/90mais3)**
 
 </div>
 
