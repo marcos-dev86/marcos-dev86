@@ -27,6 +27,11 @@
       <a href="#github" class="tab" data-tab="github">github.stats</a>
       <a href="#contato" class="tab" data-tab="contato">contato.html</a>
     </nav>
+    <div class="theme-toggle" id="themeToggle" role="switch" aria-checked="false" tabindex="0" aria-label="Alternar tema claro/escuro">
+      <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/></svg>
+      <span class="theme-toggle-track"><span class="theme-toggle-thumb"></span></span>
+      <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </div>
   </div>
 </header>
 
@@ -92,16 +97,16 @@
   <!-- ===== STACK ===== -->
   <section id="stack" class="section">
     <p class="eyebrow reveal">stack.json</p>
-    <h2 class="reveal">Stack</h2>
+    <h2 class="reveal">Stack &amp; ferramentas</h2>
     <div class="rule reveal"></div>
-    <div class="json-block reveal">
-      <pre class="json-pre"><code><span class="punct">{</span>
-  <span class="key">"frontend"</span><span class="punct">:</span> [<span class="str">"JavaScript"</span>, <span class="str">"React"</span>, <span class="str">"HTML5"</span>, <span class="str">"CSS3"</span>]<span class="punct">,</span>
-  <span class="key">"backend"</span><span class="punct">:</span> [<span class="str">"Python"</span>, <span class="str">"Java"</span>, <span class="str">"Node.js"</span>]<span class="punct">,</span>
-  <span class="key">"dados"</span><span class="punct">:</span> [<span class="str">"SQL"</span>, <span class="str">"PostgreSQL"</span>]<span class="punct">,</span>
-  <span class="key">"ferramentas"</span><span class="punct">:</span> [<span class="str">"Git"</span>, <span class="str">"GitHub"</span>, <span class="str">"Docker"</span>]<span class="punct">,</span>
-  <span class="key">"sempre_aprendendo"</span><span class="punct">:</span> <span class="bool">true</span>
-<span class="punct">}</span></code></pre>
+
+    <div class="skills-widget reveal">
+      <div class="skills-categories" role="tablist" aria-label="Categorias de tecnologias" id="skillsCategories">
+        <!-- Preenchido via script.js -->
+      </div>
+      <div class="skills-grid" id="skillsGrid" role="tabpanel" aria-live="polite">
+        <!-- Preenchido via script.js -->
+      </div>
     </div>
   </section>
 
@@ -149,6 +154,7 @@
       <pre class="shell-pre"><code><span class="text-muted">#!/bin/bash</span>
 <span class="key">export</span> GITHUB=<span class="str">"github.com/marcos-dev86"</span>
 <span class="key">export</span> EMAIL=<span class="str">"marcos.dev86@gmail.com"</span>
+<span class="key">export</span> WHATSAPP=<span class="str">"(15) 99161-7598"</span>
 
 <span class="text-muted"># abra o canal que preferir</span></code></pre>
       <div class="contact-actions">
@@ -157,6 +163,9 @@
         </a>
         <a class="btn btn-ghost" href="mailto:marcos.dev86@gmail.com">
           → ./enviar_email.sh
+        </a>
+        <a class="btn btn-whatsapp" href="https://wa.me/5515991617598" target="_blank" rel="noopener">
+          → ./abrir_whatsapp.sh
         </a>
       </div>
     </div>
